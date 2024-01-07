@@ -1,0 +1,49 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class = "contactus">
+    <h1 class="heading">Contact Us</h1>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <div class="row ">
+            <div class="col contactus-lbl">
+                <label for="name">Name:</label>
+            </div>
+            <div  class="col contactus-txt">
+                {{form.name}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col contactus-lbl">
+                <label for="email">Email:</label>
+            </div>
+            <div class="col contactus-txt">
+                {{form.email}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col contactus-lbl">
+                <label for="mobile_no">Mobile Number:</label>
+            </div>
+            <div class="col contactus-txt">
+                {{form.mobile_no}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col contactus-lbl">
+                <label for="message">Message:</label>
+            </div>
+            <div class="col contactus-txt">
+             {{form.message}}
+            </div>
+        </div>
+
+        <input type="submit" value="send message" class="btn btn-outline-primary">
+
+    </form>
+
+    {{form.errors}}
+</div>
+{% endblock %}
